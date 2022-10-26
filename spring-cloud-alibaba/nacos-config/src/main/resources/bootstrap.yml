@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: nacos-config
+  cloud:
+    nacos:
+      server-addr: 124.220.187.253:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: dev
+        group: learn
+      config:
+        namespace: dev
+        # Nacos客户端 默认是Properties的文件扩展名 (只针对默认配置文件和profile)
+        # 一旦修改成了非Properties格式，则必须通过file-extension进行设置
+        file-extension: yaml
+        group: learn
+        # 配置文件的优先级（优先级大的会覆盖优先级小的， 并且会形成互补）
+        # profile> 默认配置文件>extension-configs(下标越大优先级就越大)>shared-configs(下标越大优先级就越大)
+#        shared-configs:
+#          - data-id: nacos.order.learn.common01.yaml  #[0]
+#            refresh: true
+#            group:  默认是Default-group
+#          - data-id: nacos.order.learn.common01.yaml #[1]
+#            refresh: true
+#        extension-configs[0]:
+#          data-id: nacos.order.learn.common03.yaml
+#          refresh: true
+

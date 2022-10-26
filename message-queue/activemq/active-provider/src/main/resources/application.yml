@@ -1,0 +1,6 @@
+server:
+  port: 7278
+spring:
+  activemq:
+    broker-url: tcp://120.26.68.86:61616
+    in-memory: false

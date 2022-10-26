@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SentinelOrderApplication_8061" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="sentinel-order" />
+    <projectPathOnTarget name="projectPathOnTarget" value="/root/backend" />
+    <target name="@@@LOCAL@@@" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.lemon.learn.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.lemon.learn.SentinelOrderApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

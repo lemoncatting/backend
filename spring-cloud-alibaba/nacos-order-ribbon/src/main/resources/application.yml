@@ -1,0 +1,23 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: nacos-order-ribbon
+  cloud:
+    nacos:
+      server-addr: 124.220.187.253:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: dev
+        group: learn
+ribbon:
+  #开启饿加载  解决第一次调用问题
+  eager-load:
+    enabled: true
+    clients:
+      stock-provider
+stock-provider:
+  ribbon:
+    #NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+    NFLoadBalancerRuleClassName: com.lemon.ribbon.rule.CustomRule

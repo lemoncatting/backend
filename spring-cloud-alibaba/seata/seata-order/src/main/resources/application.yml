@@ -1,0 +1,14 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: seata-order
+  datasource:
+    url: jdbc:mysql://124.220.187.253:3306/seata_order?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: Scy962464.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*Mapper.xml

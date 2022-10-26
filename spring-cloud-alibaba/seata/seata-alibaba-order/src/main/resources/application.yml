@@ -1,0 +1,41 @@
+server:
+  port: 8072
+spring:
+  application:
+    name: seata-alibaba-order
+  datasource:
+    url: jdbc:mysql://124.220.187.253:3306/seata_order?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: Scy962464.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.220.187.253:8848
+        username: nacos
+        password: nacos
+        namespace: dev
+        group: learn
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*Mapper.xml
+seata:
+  service:
+    vgroup-mapping:
+      dev_tx_group: default
+  tx-service-group: dev_tx_group
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 124.220.187.253:8848
+      application: seata-server
+      group: SEATA_GROUP
+  config:
+    type: nacos
+    nacos:
+      server-addr: 124.220.187.253:8848
+      username: nacos
+      password: nacos
+      dataId: "seataServer.properties"
+      group: SEATA_GROUP

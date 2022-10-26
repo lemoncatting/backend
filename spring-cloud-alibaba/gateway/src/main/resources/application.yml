@@ -1,0 +1,16 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    # gateway配置
+    gateway:
+      # 路由
+      routes:
+        - id: order_route
+          uri: http://localhost:8020
+          predicates:
+            - Path=/order-server/**
+          filters:
+            - StripPrefix=1

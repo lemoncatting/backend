@@ -1,0 +1,28 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: nacos-order-openfeign
+  cloud:
+    nacos:
+      server-addr: 124.220.187.253:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: dev
+        group: learn
+logging:
+  level:
+    com.lemon.learn.feign: debug
+feign:
+  client:
+    config:
+      product-provider:
+        loggerLevel: BASIC
+        #contract: feign.Contract.Default #还原feign原生注解
+        # 连接超时时间，默认2s
+        connectTimeout: 5000
+        # 请求处理超时时间，默认5s
+        readTimeout: 10000
+        requestInterceptors[0]:
+          com.lemon.learn.interceptor.CustomFeignInterceptor

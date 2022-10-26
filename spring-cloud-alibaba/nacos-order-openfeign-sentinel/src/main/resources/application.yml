@@ -1,0 +1,17 @@
+server:
+  port: 8041
+spring:
+  application:
+    name: nacos-order-openfeign-sentinel
+  cloud:
+    nacos:
+      server-addr: 124.220.187.253:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: dev
+        group: learn
+feign:
+  # 开启sentinel
+  sentinel:
+    enabled: true

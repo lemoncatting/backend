@@ -1,0 +1,1 @@
+java -Dserver.port=8858 -Dproject.name=sentinel-dashboard -Dcsp.sentinel.log.dir=logs -jar sentinel-dashboard-1.8.3.jar
